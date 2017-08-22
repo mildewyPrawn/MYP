@@ -159,13 +159,13 @@ public class Juliano{
 	simAn.add("Tocht");
 	simAn.add("Acatl");
 
-	int ac = i - 2276828;
+	int ac = (i - 2276828)/260;
 	int f, d;
 	if(ac < 0){
-	    f = 5 + (ac % 4);
+	    f = 5 + (ac % 4)*-1;
 	    if(f < 0)
 		f = 5-(ac*-1);
-	    d = (ac % 13)+14;
+	    d = (ac % 13)+14 *-1;
 	}else{
 	    f = (ac + 5) % 4;
 	    d = (ac % 13) + 3;
