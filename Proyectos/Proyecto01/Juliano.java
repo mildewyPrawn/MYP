@@ -230,7 +230,7 @@ public class Juliano{
 	    d =(f % 13) + 14;
 	}else{
 	    m = (f + 4) % 20;
-	    d = (f % 13) + 1;
+	    d = (f % 13) + 3;
 	}
 	return "Dia:     " + d + "-"+ simTon.get(m) + "("+ d + "-" + simNa.get(m);
     }    
