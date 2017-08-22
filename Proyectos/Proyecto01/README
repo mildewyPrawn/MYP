@@ -1,0 +1,12 @@
+ Mexico D.F. a 22 de Agosto de 2017
+Universidad Nacional Autonoma de Mexico
+	Facultad de Ciencias
+     Ciencias de la Computacion
+       Modelado y Programacion               
+              Proyecto01
+
+Para correr el programa ejecutar 'java -jar Tonalpohualli.jar dd mmm aaaa
+NOTA: dd    corresponde al numero del dia.
+      mmm   corresponde al nombre del mes.
+      aaaa  Corresponde al numero del año.
+
