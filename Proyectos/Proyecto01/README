@@ -5,7 +5,8 @@ Universidad Nacional Autonoma de Mexico
        Modelado y Programacion               
               Proyecto01
 
-Para correr el programa ejecutar 'java -jar Tonalpohualli.jar dd mmm aaaa
+Para correr compilar el programa 'javac Tonapohualli.java'
+Para correr el programa 'Tonalpohualli dd mmm aaaa'
 NOTA: dd    corresponde al numero del dia.
       mmm   corresponde al nombre del mes.
       aaaa  Corresponde al numero del año.
