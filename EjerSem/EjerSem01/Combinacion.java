@@ -3,15 +3,7 @@
  * Combinaciones.java
  * Universidad Nacional Autonoma de Mexico
  * Facultad de Ciencias 
- * @authors EmilianoGaleana 31403232-4
- *          
- *          
- *          
  * Combinaciones de r en n.
- * @mails galeanaara@ciencias.unam.mx
- *        
- *        
- *        
  * ******************************************
  */
 
