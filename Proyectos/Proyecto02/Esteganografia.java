@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class Esteganografia{
 	
@@ -27,22 +26,9 @@ public class Esteganografia{
 		}
 		System.out.println("OCULTAR");
 		Oculta oc = new Oculta();
-		Devela de = new Devela();
-	        ArrayList<String> als = new ArrayList<String>();
-		als = oc.muestraContenido(args[1]);
-		String s = oc.muestraMensaje(als);
-		String t = oc.cambiaFormato(s);
-		String r = oc.cadenaABinario(t);
-		String i = oc.cambiaFormatoDeBinario(r);//mensaje en binario
-		//System.out.println(i);
-
-		ArrayList<String> emi = new ArrayList<String>();
-		emi = oc.cambiaLista(i);
-		//		oc.ocultaMsje(args[2], args[3]);
-		//		oc.ocultaMsje(args[2], args[3], emi);
-		System.out.println(emi + "que pedo ");
-		//		int j = oc.cambiaUnoOCero("01000000");
-	        
+		oc.muestraContenido(args[1]);
+		String binario = oc.preparaBinario();
+		oc.ocultaImagen(binario, args[2], args[3]);
 	    }else if(flag.equals("u")){
 		if(args.length == 4){
 		    System.out.println("Esteganografia: Error en argumentos.");
@@ -51,6 +37,7 @@ public class Esteganografia{
 		    System.exit(1);
 		}
 		System.out.println("DEVELAR");
+		Devela de = new Devela();
 	    }else{
 		System.out.println("Esta bandera '" + flag + "' no es una opcion.");
 		System.exit(1);
