@@ -30,7 +30,7 @@ public class Oculta{
 	FileReader fr = new FileReader(archivo);
 	BufferedReader br = new BufferedReader(fr);
 	while((cadena = br.readLine()) != null)
-	    mensaje += " " + cadena;
+	    mensaje +=  cadena + " ";
 	br.close();
 	return mensaje;
     }
