@@ -1,0 +1,11 @@
+ Mexico D.F. a 03 de Noviembre de 2017
+Universidad Nacional Autonoma de Mexico
+          Facultad de Ciencias
+        Ciencias de la Computacion
+         Modelado y Programacion
+                Proyecto02
+
+Para correr compilar el programa 'javac Esteganografia.java'
+Para correr el programa:
+	Ocultar: java Esteganografia h nombreArchivo nombreImagen nombreNuevaImagen
+	Develar: java Esteganografia u nombreImagen nombreArchivo
