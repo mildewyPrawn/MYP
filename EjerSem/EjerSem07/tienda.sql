@@ -1,5 +1,27 @@
-CREATE TABLE tienda(id INTEGER PRIMARY KEY ASC, telefono INTEGER, sucursal TEXT, nombre TEXT);
-CREATE TABLE comprador(id INTEGER PRIMARY KEY ASC, apellido TEXT, nombre TEXT, direccion TEXT, correo TEXT, telefono INTEGER);
-CREATE TABLE vendedor(id INTEGER PRIMARY KEY ASC, apellido TEXT, nombre TEXT, dirBodega TEXT, correo TEXT, telefono INTEGER);
-CREATE TABLE tienda_comprador(id INTEGER PRIMARY KEY ASC, id_comprador INTEGER, id_tienda INTEGER);
-CREATE TABLE tienda_vendedor(id INTEGER PRIMARY KEY ASC, id_vendedor INTEGER, id_tienda INTEGER);
+CREATE TABLE tienda(
+id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+nombre TEXT NOT NULL,
+sucursal TEXT NOT NULL,
+telefono INTEGER NOT NULL);
+CREATE TABLE vendedor(
+id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+apellido TEXT NOT NULL,
+nombre TEXT NOT NULL,
+direccion TEXT NOT NULL,
+telefono INTEGER NOT NULL,
+correo TEXT NOT NULL);
+CREATE TABLE comprador(
+id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+apellido TEXT NOT NULL,
+nombre TEXT NOT NULL,
+direccion TEXT NOT NULL,
+telefono INTEGER NOT NULL,
+correo TEXT NOT NULL);
+CREATE TABLE tienda_comprador(
+id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+id_comprador INTEGER,
+id_tienda INTEGER);
+CREATE TABLE tienda_vendedor(
+id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+id_vendedor INTEGER,
+id_tienda INTEGER);
