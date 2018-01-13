@@ -1,0 +1,44 @@
+ Mexico D.F. a 14 de Enero de 2018
+Universidad Nacional Autonoma de Mexico
+          Facultad de Ciencias
+        Ciencias de la Computacion
+         Modelado y Programacion
+	Ángeles Martínes Ángela Janín
+          Galeana Araujo Emiliano
+                Proyecto03
+
+Para compilar el programa:
+			  'ant compile.shamir'	
+			  'ant shamir.jar'
+
+Para correr el programa:
+			  'java -jar shamir.jar 
+	Para cifrar:				
+						c arc.txt n t aCifrar.txt'
+	Para decifrar:
+						d arc.txt aDecifrar.aes'
+
+Para correr las pruebas unitarias:
+				   'ant test'
+
+Para generar la documentación:
+				'ant doc'
+
+Para limpiar: 
+	     'ant clean'
+
+NOTAS: 
+	* Descargar de wwww.oracle.com/tecnetwork/java/javase/downloads/jce8-download-2133166.html
+	el jce_policy-8.zip.
+	* En la carpeta donde está guardado:
+		unzip jce_policy-8.zip
+		cd UnlimitedJCEPolicyJDK8/
+		echo $JAVA_HOME
+		sudo cp -f local_policy.jar <LaRutaDe'echo $JAVA_HOME'>/jre/lib/security
+			SIN LOS PICOPARÉNTESIS.
+		sudo cp -f US_export_policy.jar <LaRutaDe'echo $JAVA_HOME'>/jre/lib/security
+			SIN LOS PICOPARÉNTESIS.
+
+							
+
+		
