@@ -16,7 +16,9 @@ Programa
 ` ant compile.shamir`  `ant shamir.jar`  
 2. Para correr el programa:  
 > Para cifrar:  `java -jar shamir.jar c archivo.frg n t archivo.aes`  
-> Para decifrar:  `jav -jar shamir.jar d archivo.frg archivo.aes`  
+> Para decifrar:  `jav -jar shamir.jar d archivo.frg archivo.aes`
+* Para cifrar:  `java -jar shamir.jar c archivo.frg n t archivo.aes`  
+* Para decifrar:  `jav -jar shamir.jar d archivo.frg archivo.aes`  
 3. Para correr las pruebas unitarias:  
 `ant test`  
 4. Para generar la documentación:  
