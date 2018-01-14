@@ -28,11 +28,11 @@ Notas
 ------------------------------
 1. Descargar el [jce_policy-8.zip.](http://wwww.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html)
 2. En la carpeta donde está guardado:  
-> `unzip jce_policy-8.zip`
-> `cd UnlimitedJCEPolicyJDK8/`
-> `echo $JAVA_HOME`
+> `unzip jce_policy-8.zip`  
+> `cd UnlimitedJCEPolicyJDK8/`  
+> `echo $JAVA_HOME`  
 > `sudo cp -f local_policy.jar <LaRutaDe'echo $JAVA_HOME'>/jre/lib/security`  
-			SIN LOS PICOPARÉNTESIS.
+			SIN LOS PICOPARÉNTESIS.  
 > `sudo cp -f US_export_policy.jar <LaRutaDe'echo $JAVA_HOME'>/jre/lib/security`  
 			SIN LOS PICOPARÉNTESIS.
 
