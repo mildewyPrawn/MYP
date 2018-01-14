@@ -49,5 +49,20 @@ public class TestCifrar {
 	    Assert.assertTrue(cifrar.getInt(s) == i);
 	}	
     }
+
+    /**
+     * Prueba unitaria para {@link Cifrar#voltea}.
+     */
+    @Test public void testVoltea() {
+	String s = "anitalavalatina";
+	Assert.assertTrue(cifrar.voltea(s).equals(s));
+    }
+
+    /**
+     * Prueba unitaria para {@link Cifrar#compara}.
+     */
+    @Test public void testCompara() {
+	Assert.assertTrue(cifrar.compara("archivo1.frg","archivo1.txt"));
+    }
 }
 

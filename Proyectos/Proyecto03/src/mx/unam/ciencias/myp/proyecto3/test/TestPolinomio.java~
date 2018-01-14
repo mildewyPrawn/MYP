@@ -1,0 +1,29 @@
+package mx.unam.ciencias.myp.proyecto3.test;
+
+import mx.unam.ciencias.myp.proyecto3.Polinomio;
+import mx.unam.ciencias.myp.proyecto3.Cifrar;
+import org.junit.Assert;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.Timeout;
+
+/**
+ * Clase para pruebas unitarias de la clase {@link Polinomio}.
+ */
+public class TestPolinomio {
+    
+    /** Expiración para que ninguna prueba tarde más de 5 segundos. */
+    @Rule public Timeout expiracion = Timeout.seconds(5);
+
+    private Polinomio polinomio;
+    
+    /**
+     * Prueba unitaria para {@link Cifrar#hexToDec}.
+     */
+    @Test public void testHexToDec() {
+	polinomio = new Polinomio();
+	Assert.assertTrue(polinomio.hexToDec("16").toString().equals("22"));
+	Assert.assertTrue(polinomio.hexToDec("1a2b3c").toString().equals("1715004"));
+    }
+
+}
