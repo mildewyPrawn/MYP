@@ -28,7 +28,7 @@ Programa
 
 Notas
 ------------------------------
-1. Descargar el [jce_policy-8.zip.](http://wwww.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html)
+1. Descargar el [jce_policy-8.zip.](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html)
 2. En la carpeta donde está guardado:  
 > `unzip jce_policy-8.zip`  
 > `cd UnlimitedJCEPolicyJDK8/`  
