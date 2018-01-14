@@ -22,12 +22,15 @@ public class Develar{
 	valida(frg, ".frg");
 	valida(aes, ".aes");
 	String cipher = "";
+	String claves = ""; 
 	try{
 	    cipher = lecturaArchivo(aes);
+	    claves = lecturaArchivo(frg);
 	}catch(IOException ioe){
 	    System.out.println("Error en la lectura del archivo.");
 	    System.exit(1);
 	}
+	System.out.println(claves);
 	Polinomio p = new Polinomio();
 	//	BigInteger k = Lagrange();//parametros y ese pedo 
 	//	String hex  = decToHex(k);

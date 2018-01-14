@@ -39,7 +39,6 @@ public class Cifrar{
 	    System.exit(1);
 	}
 	String sha256 = getSHA256Hash(pwd);
-	System.out.println(sha256);
 	byte[] key = stringToBytes(sha256); 
 	byte[] iv = "0000000000000000".getBytes();
 	String encriptado = encriptar(key, iv, textocipher );//guardar esto en el otro argumento
@@ -93,7 +92,7 @@ public class Cifrar{
     public void validaNom(String arch, String archi){
 	if(!compara(arch, archi)){
 	    System.out.println("Shamir: Nombres inválidos " + arch + " y " + archi +
-			       " no tienen el mismo nombre");
+			       " no tienen el mismo nombre (SIN FORMATO)");
 	    System.exit(1);
 	}
     }

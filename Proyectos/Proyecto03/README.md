@@ -1,12 +1,13 @@
 Proyecto03
 =============================
 
-Autores
-------------------------------
-Ángeles Martínes Ángela Janín.
-Galeana Araujo Emiliano.
-
 Materia
 ------------------------------
 Modelado y Programación.
+
+Autores
+------------------------------
+[Ángeles Martínes Ángela Janín.](https://github.com/AngelaJanin)  
+[Galeana Araujo Emiliano.](https://github.com/mildewyPrawn)
+
 
