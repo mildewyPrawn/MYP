@@ -12,19 +12,19 @@ Autores
 
 Programa
 ------------------------------
-Para compilar el programa:  
+1. Para compilar el programa:  
 ` ant compile.shamir`  `ant shamir.jar`  
-Para correr el programa:  
+2. Para correr el programa:  
 * Para cifrar:  `java -jar shamir.jar c archivo.frg n t archivo.aes`  
 * Para decifrar:  `jav -jar shamir.jar d archivo.frg archivo.aes`  
-Para correr las pruebas unitarias:  
+3. Para correr las pruebas unitarias:  
 `ant test`  
-Para generar la documentación:  
+4. Para generar la documentación:  
 `ant doc`  
-Para limpiar:  
+5. Para limpiar:  
 `ant clean`
 
 Notas
 ------------------------------
-1. Descargar el [jce_policy-8.zip.](wwww.oracle.com/tecnetwork/java/javase/downloads/jce8-download-2133166.html)
+1. Descargar el [jce_policy-8.zip.](http://wwww.oracle.com/tecnetwork/java/javase/downloads/jce8-download-2133166.html)
 2. 
