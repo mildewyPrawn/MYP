@@ -39,6 +39,7 @@ public class Cifrar{
 	    System.exit(1);
 	}
 	String sha256 = getSHA256Hash(pwd);
+	System.out.println(sha256);
 	byte[] key = stringToBytes(sha256); 
 	byte[] iv = "0000000000000000".getBytes();
 	String encriptado = encriptar(key, iv, textocipher );//guardar esto en el otro argumento

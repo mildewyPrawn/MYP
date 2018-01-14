@@ -18,7 +18,7 @@ public class Shamir{
 		System.out.println("'Shamir c nombreEvaluaciones numEvaluaciones numMinimo nomArchivo'");
 		System.exit(1);
 	    }
-	    //CIFRAR
+	    /* CIfra el mensaje */
 	    Cifrar c = new Cifrar();
 	    String pwd = new String(System.console().readPassword());
 	    c.cifrarMensaje(args[1], args[2], args[3], args[4], pwd);
@@ -29,8 +29,9 @@ public class Shamir{
 		System.out.println("'Shamir d nomArch nomArchCifrado'");
 		System.exit(1);
 	    }
-	    //DEVELAR
-	    //	    Develar d = new Develar();
+	    /* Devela el mensaje */
+	    Develar d = new Develar();
+	    d.develaMensaje(args[1], args[2]);
 	}else{
 	    System.out.println("Esta bandera '" + args[0] + "' no es una opcion.");
 	    System.exit(1);	    

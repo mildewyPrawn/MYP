@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
+import java.util.Random;
 
 /**
  * Clase para pruebas unitarias de la clase {@link Polinomio}.
@@ -77,5 +78,20 @@ public class TestPolinomio {
 	Assert.assertTrue(poliClave.equals(clave));
     }
 
-    
+    /**
+     * Prueba unitaria para {@link Polinomio#decToHex}.
+     */
+    @Test public void testDecToHex(){
+	polinomio = new Polinomio();
+	Assert.assertTrue(polinomio.decToHex(new BigInteger("15")).equals("f"));
+	Assert.assertTrue(polinomio.decToHex(new BigInteger("303056")).equals("49fd0"));
+	Assert.assertTrue(polinomio.decToHex(new BigInteger("1783373")).equals("1b364d"));
+	Assert.assertTrue(polinomio.decToHex(new BigInteger("1234567890")).equals("499602d2"));
+	for(int i = 0; i < 5; i++){
+	    BigInteger random = new BigInteger(256, new Random());
+	    String hex = polinomio.decToHex(random);
+	    BigInteger temp = polinomio.hexToDec(hex);
+	    Assert.assertTrue(random.equals(temp));
+	}
+    }
 }

@@ -77,6 +77,7 @@ public class Polinomio{
      * Método que se encarga de obtener las n claves.
      * @param <code>n</code> la cantidad de claves que se requieren.
      * @param <code>polinomio</code> el polinomio en el que se van a evaluar.
+     * @param <code>modulo</code> el campo en el que se va a trabajar.
      * @return las <code>n</code> claves para compartir.
      */
     public String clave(int num, BigInteger[] polinomio, BigInteger modulo){
@@ -117,6 +118,7 @@ public class Polinomio{
 	    System.exit(1);
 	}
     }
+    
     /***
      * Método que cambia un número en hexadecimal a decimal.
      * @param <code>s</code> cadena en hexadecimal.
@@ -132,6 +134,17 @@ public class Polinomio{
 	    val = val.add(new BigInteger(d + ""));
 	}
 	return val;
+    }
+
+    /**
+     * Método que pasa un decimal a su representación en hexadecimal.
+     * @param <code>decimal</code> del que se quiere su representación en hexadecimal.
+     * @return representación de <code>decimal</code> en hexadecimal.
+     */
+    public String decToHex(BigInteger decimal){
+	String s = decimal.toString(16);
+	return s;//cadena en hexadecimal.
+
     }
     
 }
