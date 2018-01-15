@@ -3,9 +3,10 @@ package mx.unam.ciencias.myp.proyecto3;
 import java.io.File;
 import java.util.Random;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.IOException;
 import java.math.BigInteger;
+import java.math.BigDecimal;
 import java.io.BufferedWriter;
 
 public class Polinomio{
@@ -17,12 +18,12 @@ public class Polinomio{
     private String name;
 
     /* Las n claves */
-    private int n;//ene
+    private int n;
 
     /* t de las n claves */
     private int t;
 
-    /***/
+    /* Campo en el que vamos a trabajar. */
     private BigInteger PRIMO = new BigInteger("208351617316091241234326746312124448251235562226470491514186331217050270460481");
     
     /** Constructor sin parámetros. Para no perder el constructor sin parámetros.
@@ -96,7 +97,7 @@ public class Polinomio{
      */
     public void calcula(){
 	BigInteger[] polinomio = llena();
-	String s = clave(n, polinomio, PRIMO);
+	String s = clave(n, polinomio, PRIMO);//secreto
 	escribirArchivo(s, "./" + name);
     }
 
@@ -143,8 +144,7 @@ public class Polinomio{
      */
     public String decToHex(BigInteger decimal){
 	String s = decimal.toString(16);
-	return s;//cadena en hexadecimal.
-
+	return s;
     }
     
 }

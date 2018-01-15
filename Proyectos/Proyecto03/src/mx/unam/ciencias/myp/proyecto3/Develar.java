@@ -13,10 +13,11 @@ import java.io.FileNotFoundException;
 import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
 import static java.lang.Character.digit;
+import javax.crypto.BadPaddingException;
 import javax.crypto.spec.IvParameterSpec;
 
 public class Develar{
-
+    
     public void develaMensaje(String frg, String aes){
 	validaNom(frg, aes);
 	valida(frg, ".frg");
@@ -30,17 +31,17 @@ public class Develar{
 	    System.out.println("Error en la lectura del archivo.");
 	    System.exit(1);
 	}
-	System.out.println(claves);
-	Polinomio p = new Polinomio();
-	//	BigInteger k = Lagrange();//parametros y ese pedo 
-	//	String hex  = decToHex(k);
-	//String clave = "";// Lagrange y pasar a hexadecimal
-	String hex = "70a62c6116f2ebacf5abf7e23b07a711aebafdf518f7752f23322c6467c89ce9";//prueba la estoy copiando y pegando.
+	Lagrange l = new Lagrange();
+	//	l.getEval(claves);
+	String hex = l.getEval(claves);
+	//	System.out.println(hex);
+	//	System.out.println(hex + "     que pedo ");
+	//	String hex = p.decToHex(laclave);//"";//l.getKey();
+	//	String hex = "";
 	byte[] key = stringToBytes(hex); 
 	byte[] iv = "0000000000000000".getBytes();
-	//	String guarda = decriptar(key, iv, cipher);
 	escribirArchivo(decriptar(key, iv, cipher),  recorta(aes) + ".txt");
-	System.out.println(decriptar(key, iv, cipher));
+	//System.out.println(decriptar(key, iv, cipher));
     }
 
     /**
@@ -81,7 +82,8 @@ public class Develar{
 	    byte[] dec = cipher.doFinal(DatatypeConverter.parseBase64Binary(encriptado));
 	    return new String(dec);
 	}catch(Exception e){
-	    e.printStackTrace();
+	    System.out.println("Clave incorrecta");
+	    System.exit(1);
 	}
 	return null;
     }

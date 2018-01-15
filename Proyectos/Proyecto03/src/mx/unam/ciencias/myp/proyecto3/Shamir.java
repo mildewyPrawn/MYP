@@ -20,6 +20,7 @@ public class Shamir{
 	    }
 	    /* CIfra el mensaje */
 	    Cifrar c = new Cifrar();
+	    System.out.println("Escribe la contraseña: ");
 	    String pwd = new String(System.console().readPassword());
 	    c.cifrarMensaje(args[1], args[2], args[3], args[4], pwd);
 	}else if(args[0].equals("d")){
