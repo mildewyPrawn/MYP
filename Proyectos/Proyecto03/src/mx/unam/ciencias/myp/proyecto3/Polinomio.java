@@ -51,7 +51,9 @@ public class Polinomio{
 	BigInteger[] polinomio = new BigInteger[t];
 	polinomio[0] = bi;
 	for(int i = 1; i < t ; i++){
-	    BigInteger random = new BigInteger(256, new Random());
+	    //BigInteger random = new BigInteger(256, new Random());
+	    int r = (int)(Math.random()*1000) + 1;
+	    BigInteger random = new BigInteger(r + "");
 	    if(random.toString().equals("0"))
 		i--;
 	    BigInteger m = random.mod(PRIMO);

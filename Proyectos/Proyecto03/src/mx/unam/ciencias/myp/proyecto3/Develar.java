@@ -32,16 +32,10 @@ public class Develar{
 	    System.exit(1);
 	}
 	Lagrange l = new Lagrange();
-	//	l.getEval(claves);
 	String hex = l.getEval(claves);
-	//	System.out.println(hex);
-	//	System.out.println(hex + "     que pedo ");
-	//	String hex = p.decToHex(laclave);//"";//l.getKey();
-	//	String hex = "";
 	byte[] key = stringToBytes(hex); 
 	byte[] iv = "0000000000000000".getBytes();
 	escribirArchivo(decriptar(key, iv, cipher),  recorta(aes) + ".txt");
-	//System.out.println(decriptar(key, iv, cipher));
     }
 
     /**
