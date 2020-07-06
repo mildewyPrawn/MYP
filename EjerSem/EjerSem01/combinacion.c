@@ -7,7 +7,7 @@
 #include <gmp.h>
 #include <stdio.h>
 #include <stdlib.h>
- 
+
 int main(int argc, char **argv){
 
 	mpz_t n1, n2,n3,n4,n5;
@@ -31,8 +31,7 @@ int main(int argc, char **argv){
 	int n = 0;
 	fscanf(stdin,"%d",&n);
 	mpz_fac_ui(n1, n);
-	
-	
+
 
 /*
  *Función que obtiene el factorial de un número positivo r.
@@ -43,8 +42,7 @@ int main(int argc, char **argv){
 	int r = 0;
 	fscanf(stdin,"%d",&r);
 	mpz_fac_ui(n2,r);
-	
-	
+
 /*
  *Función que obtiene el factorial de la diferencia n-r;.
  *@param Un número entero positivo n-r.
@@ -52,17 +50,14 @@ int main(int argc, char **argv){
 */
 	int dif = n-r;
 	mpz_fac_ui(n3,dif);
-	
-	
-	
+
 /*
  *Función que obtiene que multiplica (n-r)!r!;.
  *@param Dos números enteros positivos "n-r" y "r".
  *@return Un número entero positivo que corresponde a (n-r)!r!.
 */
 	mpz_mul(n4,n3,n2);
-	
-	
+
 /*
  *Función que obtiene que multiplica (n-r)!r!;.
  *@param Dos números enteros positivos "n-r" y "r".
@@ -76,6 +71,5 @@ int main(int argc, char **argv){
 	mpz_clear(n3);
 
         return 0;
-	
-	
+
 }

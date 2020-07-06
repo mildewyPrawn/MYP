@@ -14,23 +14,23 @@ public class Devela {
      * @param el mensaje que vamos a escribir y la ruta del mensaje.
      */
     private void escribirArchivo(String msje, String arch){
-	File f = new File(arch);
-	if(f.exists()){
-	    System.out.println("El archivo tiene un nombre existente.");
-	    System.exit(1);
-	}else{
-	    try{
-		FileWriter fw = new FileWriter(f);
-		BufferedWriter bw = new BufferedWriter(fw);
-		PrintWriter pw = new PrintWriter(bw);
-		pw.write(msje);
-		pw.close();
-		bw.close();
-	    }catch(IOException ioe){
-		System.out.println("Hubo un error al crear el archivo " + arch);
-		System.exit(1);
-	    }
-	}
+        File f = new File(arch);
+        if(f.exists()){
+            System.out.println("El archivo tiene un nombre existente.");
+            System.exit(1);
+        }else{
+            try{
+                FileWriter fw = new FileWriter(f);
+                BufferedWriter bw = new BufferedWriter(fw);
+                PrintWriter pw = new PrintWriter(bw);
+                pw.write(msje);
+                pw.close();
+                bw.close();
+            }catch(IOException ioe){
+                System.out.println("Hubo un error al crear el archivo " + arch);
+                System.exit(1);
+            }
+        }
     }
 
     /**

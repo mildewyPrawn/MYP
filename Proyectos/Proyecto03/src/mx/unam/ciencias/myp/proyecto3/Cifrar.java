@@ -26,25 +26,25 @@ public class Cifrar{
      * @param <code>pwd</code> contraseña introducida por el usuario.
      */
     public void cifrarMensaje(String archNT, String ene, String te, String arch, String pwd){
-	int n = getInt(ene);
-	int t = getInt(te);
-	validaNums(n, t);//n > t
-	validaArg1(archNT);//.frg
-	validaNom(archNT, arch);//mismo nombre sin formato
-	String textocipher = "";
-	try{
-	    textocipher = lecturaArchivo(arch);
-	}catch(IOException ioe){
-	    System.out.println("Error en la lectura del archivo.");
-	    System.exit(1);
-	}
-	String sha256 = getSHA256Hash(pwd);
-	byte[] key = stringToBytes(sha256); 
-	byte[] iv = "0000000000000000".getBytes();
-	String encriptado = encriptar(key, iv, textocipher );//guardar esto en el otro argumento
-	escribirArchivo(encriptado, recorta(arch) + ".aes");
-	Polinomio p = new Polinomio(sha256, recorta(arch) + ".frg", n ,t);
-	p.calcula();
+        int n = getInt(ene);
+        int t = getInt(te);
+        validaNums(n, t);//n > t
+        validaArg1(archNT);//.frg
+        validaNom(archNT, arch);//mismo nombre sin formato
+        String textocipher = "";
+        try{
+            textocipher = lecturaArchivo(arch);
+        }catch(IOException ioe){
+            System.out.println("Error en la lectura del archivo.");
+            System.exit(1);
+        }
+        String sha256 = getSHA256Hash(pwd);
+        byte[] key = stringToBytes(sha256); 
+        byte[] iv = "0000000000000000".getBytes();
+        String encriptado = encriptar(key, iv, textocipher );//guardar esto en el otro argumento
+        escribirArchivo(encriptado, recorta(arch) + ".aes");
+        Polinomio p = new Polinomio(sha256, recorta(arch) + ".frg", n ,t);
+        p.calcula();
     }
 
     /**
@@ -52,18 +52,18 @@ public class Cifrar{
      * @param el mensaje que vamos a escribir y la ruta del mensaje.
      */
     private void escribirArchivo(String msje, String arch){
-	File f = new File(arch);
-	try{
-	    FileWriter fw = new FileWriter(f);
-	    BufferedWriter bw = new BufferedWriter(fw);
-	    PrintWriter pw = new PrintWriter(bw);
-	    pw.write(msje);
-	    pw.close();
-	    bw.close();
-	}catch(IOException ioe){
-	    System.out.println("Hubo un error al crear el archivo " + arch);
-	    System.exit(1);
-	}
+        File f = new File(arch);
+        try{
+            FileWriter fw = new FileWriter(f);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(bw);
+            pw.write(msje);
+            pw.close();
+            bw.close();
+        }catch(IOException ioe){
+            System.out.println("Hubo un error al crear el archivo " + arch);
+            System.exit(1);
+        }
     }
     
     /**
@@ -73,13 +73,13 @@ public class Cifrar{
      *        bandera.
      */
     public void validaArg1(String argumento){
-	String valido = ".frg";
-	int index = argumento.indexOf(valido);
-	if(index < 0){
-	    System.out.println("Nombre no válido, " + argumento +
-			       " tiene que terminar con '" + valido + "'." );
-	    System.exit(1);
-	}
+        String valido = ".frg";
+        int index = argumento.indexOf(valido);
+        if(index < 0){
+            System.out.println("Nombre no válido, " + argumento +
+                               " tiene que terminar con '" + valido + "'." );
+            System.exit(1);
+        }
     }
 
     /**
@@ -90,11 +90,11 @@ public class Cifrar{
      * Si no son iguales, el programa termina.
      */
     public void validaNom(String arch, String archi){
-	if(!compara(arch, archi)){
-	    System.out.println("Shamir: Nombres inválidos " + arch + " y " + archi +
-			       " no tienen el mismo nombre (SIN FORMATO)");
-	    System.exit(1);
-	}
+        if(!compara(arch, archi)){
+            System.out.println("Shamir: Nombres inválidos " + arch + " y " + archi +
+                               " no tienen el mismo nombre (SIN FORMATO)");
+            System.exit(1);
+        }
     }
 
     /**
@@ -105,7 +105,7 @@ public class Cifrar{
      *         cadenas distintas. <code>true</code> en otro caso.
      */
     public boolean compara(String uno, String dos){
-	return recorta(uno).equals(recorta(dos));
+        return recorta(uno).equals(recorta(dos));
     }
 
     /**
@@ -114,10 +114,10 @@ public class Cifrar{
      * @return <code>cadena</code> al revés.
      */
     public String voltea(String cadena){
-	String invertida = "";
-	for(int i = cadena.length() - 1; i >= 0; i--)
-	    invertida += cadena.charAt(i);
-	return invertida;
+        String invertida = "";
+        for(int i = cadena.length() - 1; i >= 0; i--)
+            invertida += cadena.charAt(i);
+        return invertida;
     }
 
     /**
@@ -126,18 +126,18 @@ public class Cifrar{
      * @return cadena con el nombre de un archivo.
      */
     private String recorta(String arch){
-	String v = voltea(arch);
-	int i = v.indexOf(".");
-	int s = v.indexOf("/");
-	if(s < 0){
-	    String ve = v.substring(i + 1, v.length());
-	    ve = voltea(ve);
-	    return ve;
-	}else{
-	    String ve = v.substring(i + 1,s);
-	    ve = voltea(ve);
-	    return ve;
-	}
+        String v = voltea(arch);
+        int i = v.indexOf(".");
+        int s = v.indexOf("/");
+        if(s < 0){
+            String ve = v.substring(i + 1, v.length());
+            ve = voltea(ve);
+            return ve;
+        }else{
+            String ve = v.substring(i + 1,s);
+            ve = voltea(ve);
+            return ve;
+        }
     }
 
     /**
@@ -146,11 +146,11 @@ public class Cifrar{
      * @return arreglo de bytes.
      */
     public static byte[] stringToBytes(String clavehash){
-    	int length = clavehash.length();
-    	byte[] output = new byte[length / 2];
-	for (int i = 0; i < length; i += 2) 
-	    output[i / 2] = (byte) ((digit(clavehash.charAt(i), 16) << 4) | digit(clavehash.charAt(i+1), 16));
-    	return output;
+        int length = clavehash.length();
+        byte[] output = new byte[length / 2];
+        for (int i = 0; i < length; i += 2) 
+            output[i / 2] = (byte) ((digit(clavehash.charAt(i), 16) << 4) | digit(clavehash.charAt(i+1), 16));
+        return output;
     }
 
     /**
@@ -161,17 +161,17 @@ public class Cifrar{
      * @return una cadena con el texto encriptado.
      */
     public static String encriptar(byte[] key, byte[] iv, String value){
-	try{
-	    Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
-	    SecretKeySpec sks = new SecretKeySpec(key, "AES");
-	    cipher.init(Cipher.ENCRYPT_MODE, sks, new IvParameterSpec(iv));
+        try{
+            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
+            SecretKeySpec sks = new SecretKeySpec(key, "AES");
+            cipher.init(Cipher.ENCRYPT_MODE, sks, new IvParameterSpec(iv));
 	    
-	    byte[] encriptado = cipher.doFinal(value.getBytes());
-	    return DatatypeConverter.printBase64Binary(encriptado);
-	}catch(Exception e){
-	    e.printStackTrace();
-	}
-	return null;
+            byte[] encriptado = cipher.doFinal(value.getBytes());
+            return DatatypeConverter.printBase64Binary(encriptado);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return null;
     }
 
     /**
@@ -181,15 +181,15 @@ public class Cifrar{
      * @return cadena con la dispersión de SHA256.
      */
     public String getSHA256Hash(String data){
-	String result = null;
-	try{
-	    MessageDigest digest = MessageDigest.getInstance("SHA-256");
-	    byte[] hash = digest.digest(data.getBytes("UTF-8"));
-	    return bytesToHex(hash);
-	}catch(Exception e){
-	    e.printStackTrace();
-	}
-	return result;
+        String result = null;
+        try{
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] hash = digest.digest(data.getBytes("UTF-8"));
+            return bytesToHex(hash);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return result;
     }
 
     /**
@@ -199,9 +199,9 @@ public class Cifrar{
      * @return cadena en hexadecimal.
      */
     private String bytesToHex(byte[] hash){
-	String s = DatatypeConverter.printHexBinary(hash);
-	s = s.toLowerCase();
-	return s;
+        String s = DatatypeConverter.printHexBinary(hash);
+        s = s.toLowerCase();
+        return s;
     }
 
     /**
@@ -210,20 +210,20 @@ public class Cifrar{
      * @return el contenido en cadena del mensaje en el archivo.
      */
     private String lecturaArchivo(String archivo) throws FileNotFoundException, IOException{
-	String mensaje = "";
-	FileReader fr = null;
-	BufferedReader br = null;
-	try{
-	    fr = new FileReader(archivo);
-	    br = new BufferedReader(fr);
-	    String cadena;
-	    while((cadena = br.readLine()) != null)
-		mensaje += cadena + " ";
-	}catch(IOException ioe){
-	    System.out.println("Error en la lectura del archivo");
-	    System.exit(1);
-	}
-	return mensaje;
+        String mensaje = "";
+        FileReader fr = null;
+        BufferedReader br = null;
+        try{
+            fr = new FileReader(archivo);
+            br = new BufferedReader(fr);
+            String cadena;
+            while((cadena = br.readLine()) != null)
+                mensaje += cadena + " ";
+        }catch(IOException ioe){
+            System.out.println("Error en la lectura del archivo");
+            System.exit(1);
+        }
+        return mensaje;
     }
 
     /**
@@ -234,11 +234,11 @@ public class Cifrar{
      *         <code>true</code> en otro caso.
      */
     public boolean validaNUms(int n, int t){
-	if(n <= 2)
-	    return false;
-	if(n < t)
-	    return false;
-	return true;
+        if(n <= 2)
+            return false;
+        if(n < t)
+            return false;
+        return true;
     }
     
     /**
@@ -247,14 +247,14 @@ public class Cifrar{
      * En caso de no serlo, el programa termina.
      */
     public void validaNums(int n, int t){
-	if(n <= 2){
-	    System.out.println("Error en las evaluaciones intente: n > 2");
-	    System.exit(1);
-	}
-	if(n < t){
-	    System.out.println("Error en el mínimo de evaluaciones requeridas, intente: 1 < t ≤ n");
-	    System.exit(1);
-	}
+        if(n <= 2){
+            System.out.println("Error en las evaluaciones intente: n > 2");
+            System.exit(1);
+        }
+        if(n < t){
+            System.out.println("Error en el mínimo de evaluaciones requeridas, intente: 1 < t ≤ n");
+            System.exit(1);
+        }
     }
 
     /**
@@ -263,13 +263,13 @@ public class Cifrar{
      * @return int, representación de la cadena.
      */
     public int getInt(String num){
-	int i = 0;
-	try{
-	    i = Integer.parseInt(num);
-	}catch(NumberFormatException nfe){
-	    System.out.println("'" + num + "'" + " No es un número valido");
-	    System.exit(1);
-	}
-	return i;
+        int i = 0;
+        try{
+            i = Integer.parseInt(num);
+        }catch(NumberFormatException nfe){
+            System.out.println("'" + num + "'" + " No es un número valido");
+            System.exit(1);
+        }
+        return i;
     }
 }

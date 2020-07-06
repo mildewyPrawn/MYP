@@ -10,10 +10,11 @@ public class Juliano{
      *         <tt>false</tt> sino lo es
      */
     public boolean esBis(int a){
-	if (a <= 1583)
-	    return(a % 4 == 0);
-	return((a % 4 == 0) && (a % 100 != 0) || (a % 400 == 0));
+        if (a <= 1583)
+            return(a % 4 == 0);
+        return((a % 4 == 0) && (a % 100 != 0) || (a % 400 == 0));
     }
+
     /**
      * Toma una cadena, no importa si es en mayusculas o minusculas, las va a pasar
      * a minusculas y luego la va a recortar a los primeros tres caracteres para 
